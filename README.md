@@ -6,4 +6,4 @@ This is simply a gateway to my public teaching materials.
 
 ### Presentations
 
-[Image classification in pytorch](https://raw.githubusercontent.com/simonpf/teaching/master/machine_learning/2020/presentations/image_classification_pytorch.slides.html)
+[Image classification in pytorch](machine_learning/2020/presentations/image_classification_pytorch.slides.html)
