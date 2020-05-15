@@ -13211,7 +13211,7 @@ a.anchor-link {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="General-case:-$n$-classes">General case: $n$ classes<a class="anchor-link" href="#General-case:-$n$-classes">&#182;</a></h2><ul>
 <li>Predict vector of probabilities: $[p_{c = 1}, \ldots, p_{c=n}]$</li>
-<li>What do we expect from the predicted probabilities:<ul>
+<li>What we expect from the predicted probabilities:<ul>
 <li>Should be in [0, 1]</li>
 <li>Should sum to 1</li>
 </ul>
@@ -13235,6 +13235,7 @@ a.anchor-link {
 must be 1</p>
 <ul>
 <li>Not a problem in practice</li>
+<li>c.f. Section 6.2.2 in the <a href="https://www.deeplearningbook.org/contents/mlp.html">deep learning book</a>.</li>
 </ul>
 </li>
 </ul>
@@ -13252,7 +13253,7 @@ must be 1</p>
 </li>
 <li>Now we only need to map output to [0, 1]</li>
 <li>This is achieved using a sigmoid activation function:<ul>
-<li>$f(x) = \frac{1}{1 + \exp(-x)}$</li>
+<li>$\sigma(z) = \frac{1}{1 + \exp(-z)}$</li>
 </ul>
 </li>
 </ul>
@@ -13269,7 +13270,7 @@ must be 1</p>
 </div><div class="fragment">
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">torch</span>
@@ -13316,7 +13317,7 @@ must be 1</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>To monitor training progress,the data available for training is split
+<li>To monitor training progress, the data available for training is split
 into training and validation set</li>
 </ul>
 
@@ -13342,10 +13343,10 @@ into training and validation set</li>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Understanding-training_data-and-validation_data">Understanding <code>training_data</code> and <code>validation_data</code><a class="anchor-link" href="#Understanding-training_data-and-validation_data">&#182;</a></h2><ul>
-<li>Training data is split by only by indices</li>
+<li>Training data is split only by indices</li>
 <li><code>training_data.indices</code> and <code>validation_data.indices</code> contain indices
-of images in each part of the data</li>
-<li>When requested these images are taken from the dataset stored in
+of images in each part</li>
+<li>When requested these images are taken from the dataset referenced in
 <code>training_data.dataset</code> and <code>validation_data.dataset</code></li>
 </ul>
 
